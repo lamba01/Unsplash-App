@@ -19,26 +19,7 @@
 .search-container p {
     margin: 10px 0;
 }
-.input-container input {
-    width: 100%;
-    padding: 15px;
-    border-radius: 5px;
-    border: 2px solid #E5E7EB;
-    padding-right: 30px;
-}
-.input-container {
-    position: relative;
-    display: inline-block;
-    width: 100%;
-  }  
-  .search-icon {
-    position: absolute;
-    top: 50%;
-    right: 10px; 
-    transform: translateY(-50%);
-    font-size: 18px; 
-    cursor: pointer; 
-  }
+
   @media only screen and (min-height: 600px) and (max-width: 1024px) {
     .hero-section {
         height: 60vh;
@@ -59,8 +40,5 @@
     }
     .search-container p {
         text-align: center;
-    }
-    .input-container  {
-        width: 80%;
     }
   }

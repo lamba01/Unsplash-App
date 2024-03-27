@@ -19,7 +19,7 @@ import React from 'react';
 import { BrowserRouter as Router, Route, Routes } from "react-router-dom";
 import Home from './pages/Home/Home';
 import Navbar from './components/navigation/Navbar';
-// import Search from './Search';
+import SearchPage from './pages/Search/SearchPage';
 
 function App() {
   return (
@@ -27,7 +27,7 @@ function App() {
       <Navbar />
       <Routes>
       <Route path="/" element={<Home />} />
-        {/* <Route path="/search/:query" component={Search} /> */}
+        <Route path="/search/:query" element={<SearchPage />} />
       </Routes>
         
       

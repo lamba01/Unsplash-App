@@ -2,7 +2,7 @@ import React from 'react';
 import './home.css'
 import heroleft from '../../assets/hero-left.png';
 import heroright from '../../assets/hero-right.png';
-import searchicon from '../../assets/Search.svg'
+import SearchInput from '../../components/search/SearchInput';
 
 function Home() {
   return (
@@ -11,10 +11,7 @@ function Home() {
         <div className="search-container">
         <h2>Search</h2>
         <p>Search high-resolution images from Unsplash</p>
-        <div className="input-container">
-        <input type="text" placeholder='Enter your keywords...' />
-        <img src={searchicon} alt="" className='search-icon' />
-        </div>
+        <SearchInput />
         </div>
         <img src={heroright} alt=""  className='hero-right'/>
     </div>

@@ -1,0 +1,25 @@
+.input-container input {
+    width: 100%;
+    padding: 15px;
+    border-radius: 5px;
+    border: 2px solid #E5E7EB;
+    padding-right: 30px;
+}
+.input-container {
+    position: relative;
+    display: inline-block;
+    width: 100%;
+  }  
+  .search-icon {
+    position: absolute;
+    top: 50%;
+    right: 10px; 
+    transform: translateY(-50%);
+    font-size: 18px; 
+    cursor: pointer; 
+  }
+  @media only screen and (max-width: 640px) {
+    .input-container  {
+        width: 80%;
+    }
+  }
