@@ -57,6 +57,9 @@
     .search-container {
         width: 100%;
     }
+    .search-container p {
+        text-align: center;
+    }
     .input-container  {
         width: 80%;
     }

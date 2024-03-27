@@ -87,18 +87,32 @@ nav span {
 }
 
 /* MOBILE */
-@media screen and (max-width: 850px){
-  nav{
-    padding: 1rem 5vw;
-  }
-  
-  nav .small-screens i{
+@media screen and (max-width: 640px){  
+  nav .big-screens{
     font-size: 25px;
     cursor: pointer;
   }
   
-  nav .big-screens {
-    display: none;
+}
+
+@media screen and (max-width: 450px) {
+  nav {
+    padding: 0 1.5vw;
+  }
+  nav span {
+    font-size: 12px;
+  }
+}
+
+@media screen and (max-width: 400px) {
+  nav li {
+    padding: 5px 0;
+  }
+
+}
+@media screen and (max-width: 350px) {
+  nav span {
+    padding: 0 0.5rem;
   }
 }
 
