@@ -1,4 +1,7 @@
-/* GOOGLE FONTS */
-
-@import url("https://fonts.google.com/specimen/Be+Vietnam+Pro");
-
+@font-face {
+    font-family: 'Be Vietnam Pro';
+    src:url('./font/BeVietnamPro-Regular.ttf') format('truetype');
+  }
+* {
+    font-family: 'Be Vietnam Pro', sans-serif;
+}

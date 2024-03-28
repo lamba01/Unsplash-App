@@ -2,6 +2,8 @@ import React, { useState, useEffect } from 'react';
 import { useParams } from 'react-router-dom';
 import axios from 'axios'; 
 import SearchInput from '../../components/search/SearchInput';
+import gradient from '../../assets/gradiend-bg@2x.png';
+import './searchpage.css'
 
 function SearchPage() {
   const { query } = useParams();
@@ -16,7 +18,7 @@ function SearchPage() {
         const response = await axios.get(`https://api.unsplash.com/search/photos`, {
           params: {
             query: query,
-            per_page: 10, // Number of items per page
+            per_page: 8, // Number of items per page
             // Add other parameters as needed
           },
           headers: {
@@ -36,15 +38,17 @@ function SearchPage() {
 
   if (loading) {
     return <div>Loading...</div>;
-  }
+  }  
 
   return (
-    <div>
-      <h1>Search Results for "{query}"</h1>
+    <div className='search-page'>
+      <img src={gradient} alt=""  className='gradient-img'/>
+      <div className="search-page-inputcontainer">
       <SearchInput initialValue={query} />
-      <div className="photos">
-        {photos.map((photo) => (
-          <img key={photo.id} src={photo.urls.regular} alt={photo.alt_description} />
+      </div>
+      <div className="photo-grid">
+        {photos.map((photo, index) => (
+          <img key={photo.id} src={photo.urls.regular} alt={photo.alt_description} className={`photo-item`} />
         ))}
       </div>
     </div>

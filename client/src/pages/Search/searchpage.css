@@ -1,0 +1,37 @@
+.search-page {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    overflow: hidden;
+    padding-bottom: 135px;
+}
+.gradient-img {
+    height: 80px;
+}
+.search-page-inputcontainer {
+    width: 40%;
+    margin-top: -25px;
+    margin-bottom: 50px;
+}
+.photo-grid {
+    display: grid;
+    place-content: center;
+    grid-template-columns: 21vw 21vw 21vw 21vw;
+    grid-template-rows: 70vh 70vh;
+    gap: 25px;
+
+  }
+  .photo-item {
+    width: 100%;
+    height: 100%;
+    border-radius: 5px;
+  }
+  .photo-grid img:nth-child(4) {
+    height: 45%;
+  }
+  .photo-grid img:nth-child(8) {
+    margin-top: -80%;
+  }
+  .photo-grid img:nth-child(6) {
+    height: 85vh;
+  }

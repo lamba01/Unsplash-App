@@ -20,17 +20,16 @@ import { BrowserRouter as Router, Route, Routes } from "react-router-dom";
 import Home from './pages/Home/Home';
 import Navbar from './components/navigation/Navbar';
 import SearchPage from './pages/Search/SearchPage';
+import './App.css'
 
 function App() {
   return (
-    <Router>
+    <Router> 
       <Navbar />
       <Routes>
       <Route path="/" element={<Home />} />
         <Route path="/search/:query" element={<SearchPage />} />
       </Routes>
-        
-      
     </Router>
   );
 }

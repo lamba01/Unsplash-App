@@ -18,6 +18,7 @@ function SearchInput({ initialValue }) {
         placeholder="Enter your keywords..."
         value={searchQuery}
         onChange={(e) => setSearchQuery(e.target.value)}
+        style={{ fontWeight: '500' }}
       />
       <Link to={searchQuery ? `/search/${searchQuery}` : '/'} className="search-icon-link">
         <img src={searchicon} alt="" className='search-icon' />
