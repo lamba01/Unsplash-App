@@ -1,5 +1,5 @@
 import React, { useState, useEffect } from 'react';
-import { useParams } from 'react-router-dom';
+import { useParams, Link } from 'react-router-dom';
 import axios from 'axios'; 
 import SearchInput from '../../components/search/SearchInput';
 import gradient from '../../assets/gradiend-bg@2x.png';
@@ -40,15 +40,18 @@ function SearchPage() {
     return <div>Loading...</div>;
   }  
 
+
   return (
     <div className='search-page'>
       <img src={gradient} alt=""  className='gradient-img'/>
       <div className="search-page-inputcontainer">
       <SearchInput initialValue={query} />
       </div>
-      <div className="photo-grid">
+      <div className="photo-grid">      
         {photos.map((photo, index) => (
-          <img key={photo.id} src={photo.urls.regular} alt={photo.alt_description} className={`photo-item`} />
+          <Link key={photo.id} to={`/image-details/${photo.id}`}>
+          <img src={photo.urls.regular} alt={photo.alt_description} className={`photo-item`} />
+          </Link>
         ))}
       </div>
     </div>

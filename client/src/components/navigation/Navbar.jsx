@@ -1,6 +1,7 @@
 import React, { useState } from 'react';
 import './navbar.css';
 import logo from '../../assets/Logo.svg';
+import Auth from '../../auth/Auth';
 
 function Navbar() {
   const [activeMenuItem, setActiveMenuItem] = useState('Home');
@@ -25,6 +26,7 @@ function Navbar() {
             onClick={() => handleClick('Collections')}
           >
             <span>Collections</span>
+            <span><Auth /></span>
           </li>
           {/* Add more menu items here if needed */}
         </ul>
