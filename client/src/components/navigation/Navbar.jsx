@@ -1,6 +1,7 @@
 import React, { useState } from 'react';
 import './navbar.css';
 import logo from '../../assets/Logo.svg';
+import { Link } from 'react-router-dom';
 
 function Navbar() {
   const [activeMenuItem, setActiveMenuItem] = useState('Home');
@@ -24,7 +25,7 @@ function Navbar() {
             className={activeMenuItem === 'Collections' ? 'active' : 'nav-item'}
             onClick={() => handleClick('Collections')}
           >
-            <span>Collections</span>
+            <Link to={`/collections`}><span>Collections</span></Link>
           </li>
           {/* Add more menu items here if needed */}
         </ul>

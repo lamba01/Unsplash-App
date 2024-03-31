@@ -1,5 +1,6 @@
 import React, { useEffect, useState } from 'react';
 import axios from 'axios';
+import { Link } from 'react-router-dom';
 import "./collection.css"
 
 const ACCESS_KEY = process.env.REACT_APP_UNSPLASH_ACCESS_KEY;
@@ -15,11 +16,11 @@ function Collections() {
             client_id: ACCESS_KEY,
             per_page:6,
             page: 1,
-            featured: true, // Fetch only featured collections
+            // featured: true,
+            privacy: 'public', 
           },
         });
         setCollections(response.data);
-        console.log(response.data)
       } catch (error) {
         console.error('Error fetching collections:', error);
       }
@@ -37,7 +38,9 @@ function Collections() {
       <div className="collections-list">
         {collections.map(collection => (
           <div key={collection.id} className="collection-item">
-            <h4>{collection.title}</h4>
+            <Link to={`/collections/${collection.id}/${encodeURIComponent(collection.title)}`}>
+                {collection.title}
+            </Link>
             <p>{collection.total_photos} photos</p>
              <div className="preview-photos">
                 <img src={collection.preview_photos[0].urls.regular} alt={collection.preview_photos[0].alt_description} className='large-photo'/>
