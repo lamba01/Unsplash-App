@@ -1,0 +1,91 @@
+.image-details {
+    display: flex;
+    gap: 32px;
+    height: 100vh;
+    margin: 72px;
+}
+.image-container {
+    width: 50%;
+    object-fit: cover;
+}
+.image-container img {
+    width: 100%;
+    height: 100%;
+}
+.user {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+}
+.user img {
+    border-radius: 50%;
+    object-fit: cover;
+}
+.user p {
+    text-transform: capitalize;
+    font-weight: 600;
+}
+.date {
+    margin: 10px 0px;
+    color: #6C727F;
+}
+.coll {
+    margin: 20px 0px 10px 0px;
+}
+.image-description {
+    width: 50%;
+}
+.image-description button {
+    padding: 10px 30px;
+    border-radius: 5px;
+    border: 1px solid #E5E7EB;
+    color: black;
+    text-transform: capitalize;
+    background-color: #E5E7EB;
+    margin-right: 10px;
+    font-weight: 600;
+}
+  .disabled-button {
+    cursor: not-allowed;
+    opacity: 0.5;
+  }
+.download-button {
+    cursor: pointer;
+}
+.download-button:hover {
+    background-color: #6C727F;
+    opacity: 0.9;
+  }
+.collection-img {
+    width: 50px;
+    height: 50px;
+    border-radius: 5px;
+    object-fit: cover;
+}
+.image-description ul {
+    list-style-type: none;
+}
+.collection-container {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    margin: 20px 0;
+    margin-left: -35px;
+    padding: 5px;
+    cursor: pointer;
+    width: 100%;
+}
+.collection-container:hover {
+    background-color: #E5E7EB;
+}
+.collection-container div {
+    display: flex;
+    flex-direction: column;
+    gap: 5px;
+}
+.collection-title {
+    text-transform: capitalize;
+}
+.collection-photo-amount {
+    font-size: 12px;
+}

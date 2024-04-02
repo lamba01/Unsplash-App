@@ -19,13 +19,14 @@ function SearchPage() {
           params: {
             query: query,
             per_page: 8, // Number of items per page
-            // Add other parameters as needed
+            content_filter: 'low',
           },
           headers: {
             Authorization: `Client-ID ${ACCESS_KEY}`,
           },
         });
         setPhotos(response.data.results);
+        console.log(response.data.results)
         setLoading(false);
       } catch (error) {
         console.error('Error fetching photos:', error);

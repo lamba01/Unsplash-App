@@ -9,21 +9,33 @@ const RedirectPage = () => {
       if (code) {
         try {
           const response = await axios.post('https://unsplash.com/oauth/token', {
-            client_id: process.env.REACT_APP_UNSPLASH_ACCESS_KEY,
-            client_secret: process.env.REACT_APP_UNSPLASH_CLIENT_SECRET,
-            redirect_uri: 'http://localhost:3000/redirect',
-            code: code,
-            grant_type: 'authorization_code',
+            params: {
+              client_id: process.env.REACT_APP_UNSPLASH_ACCESS_KEY,
+              client_secret: process.env.REACT_APP_UNSPLASH_CLIENT_SECRET,
+              redirect_uri: 'http://localhost:3000/redirect',
+              code: code,
+              grant_type: 'authorization_code',
+            }
           });
+          console.log(response.data)
           const accessToken = response.data.access_token;
           localStorage.setItem('accessToken', accessToken);
-          console.log(accessToken)
+      
           // Redirect user to home page or any other page after successful authentication
-          window.location.href = '/';
+          // window.location.href = '/';
+          // Inside the try block
+setTimeout(() => {
+  window.location.href = '/';
+}, 5000); // Redirect after 5 seconds
+
         } catch (error) {
           console.error('Error exchanging code for access token:', error);
+          // Inside the catch block
+localStorage.setItem('authError', JSON.stringify(error));
+// window.location.href = '/redirect';
+
           // Redirect user to error page or handle error accordingly
-          window.location.href = '/error';
+          // window.location.href = '/redirect';
         }
       }
     };
