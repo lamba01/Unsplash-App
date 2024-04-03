@@ -81,7 +81,7 @@ const ImgDetails = () => {
         </div>
       <p className='date'>Published on {formatDate(imageDetails.created_at)}</p>
       <button className='disabled-button'><IoIosAdd />Add to collection</button>
-      <button className='download-button'> <MdDownloading />download</button>
+      <button className='download-button'> <a href={imageDetails.links.html} target="_blank" rel="noopener noreferrer"><MdDownloading />download </a></button>
       <h3 className='coll'>Collections</h3>
       <ul>
         {imageDetails.related_collections.results.map(collection => (
