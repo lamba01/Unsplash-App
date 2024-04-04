@@ -32,7 +32,7 @@ strong {
     margin-bottom: 50px;
     height: 80%;
 }
-.collection-item h4, .collection-item p {
+ .title-div {
     order: 2;
 } 
 .collection-item p {
@@ -43,8 +43,9 @@ strong {
     display: flex;
     gap: 2px;
     width: 100%;
-    height: 100%;
+    height: 200px;
     border-radius: 5px;
+    order: 1;
  }
  .large-photo {
     width: 80%;
@@ -56,6 +57,7 @@ strong {
     flex-direction: column;
     gap: 2px;
     width: 20%;
+    height: 100%;
  }
 .small-photos img {
     height: 50%;
@@ -73,10 +75,7 @@ strong {
         grid-template-columns: 70vw;
         grid-template-rows: 25vh 25vh;
     }
+    .preview-photos {
+        height: 150px;
+     }
 }
-/* @media screen and (max-width: 450px) {
-    .collections-list {
-        grid-template-columns: 75vw;
-        grid-template-rows: 30vh 35vh;
-    }
-} */

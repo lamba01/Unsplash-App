@@ -32,11 +32,15 @@
     }
   }
   @media only screen and (max-width: 640px) {
+    .hero-section {
+        justify-content: center;
+        align-items: center;
+    }
     .hero-left, .hero-right {
         display: none;
     }
     .search-container {
-        width: 100%;
+        width: 90%;
     }
     .search-container p {
         text-align: center;

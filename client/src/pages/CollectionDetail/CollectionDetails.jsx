@@ -1,12 +1,31 @@
 import React, { useState, useEffect } from 'react';
 import axios from 'axios';
-import { useParams } from 'react-router-dom';
+import { useParams, Link } from 'react-router-dom';
+import './collectiondetails.css';
 const ACCESS_KEY = process.env.REACT_APP_UNSPLASH_ACCESS_KEY;
 
 function CollectionDetails() {
     const { id, name } = useParams();
     const [collectionPhotos, setCollectionPhotos] = useState([]);
+    const [totalPhotos, setTotalPhotos] = useState(0);
     const [loading, setLoading] = useState(true);
+
+    useEffect(() => {
+        const fetchCollectionDetails = async () => {
+            try {
+                const response = await axios.get(`https://api.unsplash.com/collections/${id}`, {
+                    headers: {
+                        Authorization: `Client-ID ${ACCESS_KEY}`,
+                    },
+                });
+                setTotalPhotos(response.data.total_photos);
+            } catch (error) {
+                console.error('Error fetching collection details:', error);
+            }
+        };
+
+        fetchCollectionDetails();
+    }, [id]);
 
     useEffect(() => {
         const fetchCollectionPhotos = async () => {
@@ -15,14 +34,12 @@ function CollectionDetails() {
                     params: {
                         per_page: 8,
                         orientation: 'landscape',
-                        privacy: 'public' 
                     },
                     headers: {
                         Authorization: `Client-ID ${ACCESS_KEY}`,
                     },
                 });
                 setCollectionPhotos(response.data);
-                console.log(response.data)
                 setLoading(false);
             } catch (error) {
                 console.error('Error fetching collection photos:', error);
@@ -37,19 +54,18 @@ function CollectionDetails() {
         return <div>Loading...</div>;
     }
 
-    if (!collectionPhotos.length) {
-        return <div>No photos found for this collection</div>;
-    }
-
     return (
-        <div>
-            <h2>{name}</h2>
+        <div className='collections'>
+            <div className="collection-header">
+                <h2 className='collection-name'>{name}</h2>
+                <p>{totalPhotos} photos</p>
+            </div>
             <div className="collection-photos">
                 {collectionPhotos.map(photo => (
                     <div key={photo.id} className="photo-item">
-                        <img src={photo.urls.regular} alt={photo.alt_description} />
-                        <p>Uploaded by: {photo.user.name}</p>
-                        <p>Published date: {new Date(photo.created_at).toLocaleDateString()}</p>
+                        <Link key={photo.id} to={`/image-details/${photo.id}`}>
+                        <img src={photo.urls.regular} alt={photo.alt_description} className='collection-image' />
+                        </Link>
                     </div>
                 ))}
             </div>

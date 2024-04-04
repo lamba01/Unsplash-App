@@ -19,7 +19,7 @@ function Navbar() {
             className={activeMenuItem === 'Home' ? 'active' : 'nav-item'}
             onClick={() => handleClick('Home')}
           >
-            <span>Home</span>
+            <Link to={`/`}><span>Home</span></Link>
           </li>
           <li
             className={activeMenuItem === 'Collections' ? 'active' : 'nav-item'}

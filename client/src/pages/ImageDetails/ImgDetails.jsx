@@ -4,17 +4,12 @@ import { useParams } from 'react-router-dom';
 import "./imgdetails.css"
 import { MdDownloading } from "react-icons/md";
 import { IoIosAdd } from "react-icons/io";
-
 const ACCESS_KEY = process.env.REACT_APP_UNSPLASH_ACCESS_KEY;
-// const username = 'lambaaamm'
 
 const ImgDetails = () => {
   const [imageDetails, setImageDetails] = useState(null);
   const [loading, setLoading] = useState(true);
-  // const [searchQuery, setSearchQuery] = useState('');
-  // const [searchResults, setSearchResults] = useState([]);
   const { id } = useParams();
-  // const username = 'lambaaamm'
 
   useEffect(() => {
     const fetchImageDetails = async () => {
@@ -49,25 +44,7 @@ const ImgDetails = () => {
   };
  
 
-  // const searchUserCollections = async () => {
-  //   setLoading(true);
-  //   try {
-  //     const response = await axios.get(`https://api.unsplash.com/users/${username}/collections`, {
-  //       params: {
-  //         username: 'lambaaamm'
-  //       },
-  //       headers: {
-  //         Authorization: `Client-ID ${ACCESS_KEY}`,
-  //       },
-  //     });
-  //     setSearchResults(response.data);
-  //     console.log(response.data)
-  //     setLoading(false);
-  //   } catch (error) {
-  //     console.error('Error searching user collections:', error);
-  //     setLoading(false);
-  //   }
-  // };
+
   
   return (
     <div className='image-details'>
